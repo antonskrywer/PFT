@@ -21,7 +21,7 @@ body.pft {
 
 /* Inhaltsrahmen: auf dem Smartphone volle Breite, auf dem Desktop eine Spalte */
 body.pft .container-fluid { padding-left: 0; padding-right: 0; }
-body.pft .container-fluid > .row { margin-left: 0; margin-right: 0; }
+body.pft .container-fluid .row { margin-left: 0; margin-right: 0; }
 body.pft #content { margin: 0; }
 body.pft #content > .col-sm-2 { display: none; }
 body.pft #content > .col-sm-8 {

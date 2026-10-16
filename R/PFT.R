@@ -45,7 +45,7 @@ PFT <- function(label = "PFT",
     psychTestR::begin_module(label),
     psychTestR::new_timeline(psychTestR::join(
       pft_text_page("WELCOME_TITLE", "WELCOME_TEXT"),
-      pft_text_page("INSTRUCTION_TITLE", "INSTRUCTION_TEXT"),
+      pft_instruction_page(),
       pft_demo_page(),
       pft_demo_feedback_page(),
       pft_text_page(NULL, "START_TEXT"),
@@ -53,6 +53,25 @@ PFT <- function(label = "PFT",
       if (feedback) pft_result_page(label, final = FALSE)
     ), dict = dict),
     psychTestR::end_module()
+  )
+}
+
+# ---- Instruktion ----
+
+# Text plus das Beispiel-Item als (nicht anklickbare) Abbildung, damit
+# "oben" und "darunter" im Text einen Bezug haben
+pft_instruction_page <- function() {
+  psychTestR::one_button_page(
+    pft_wrap(
+      class = "pft-text pft-instruction",
+      shiny::h3(class = "pft-title", psychTestR::i18n("INSTRUCTION_TITLE")),
+      shiny::div(class = "pft-body", psychTestR::i18n("INSTRUCTION_TEXT")),
+      shiny::div(class = "pft-task",
+                 shiny::img(src = pft_img_url("Instructiontask.png"), alt = "")),
+      pft_option_cards(paste0("InstructionAnswer", seq_along(pft_options), ".png"),
+                       interactive = FALSE)
+    ),
+    button_text = psychTestR::i18n("CONTINUE")
   )
 }
 
