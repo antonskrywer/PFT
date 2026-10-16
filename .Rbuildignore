@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data_raw$
+^stimuli$
+^output$
+^.*\.pdf$
+^.*\.docx$
+^README\.md$
+^\.claude$

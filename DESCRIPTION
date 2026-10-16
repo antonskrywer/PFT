@@ -1,0 +1,25 @@
+Package: PFT
+Title: Paper Folding Test (Vz-2-BRACE) for psychTestR
+Version: 0.1.0
+Authors@R:
+    person("Anton", email = "das.schreiberle@gmail.com", role = c("aut", "cre"))
+Description: Online implementation of the Paper Folding Test (Vz-2-BRACE), a
+    measure of spatial visualisation. Both parts of the paper version are
+    administered in one interleaved block with a six-minute time limit;
+    skipped problems are presented again at the end. Based on the
+    psychTestR library.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.6.0)
+Imports:
+    htmltools (>= 0.5.0),
+    psychTestR (>= 2.22.0),
+    shiny (>= 1.5.0)
+Suggests:
+    png,
+    testthat (>= 3.0.0)
+Remotes: pmcharrison/psychTestR
+Config/testthat/edition: 3
+RoxygenNote: 7.3.3
